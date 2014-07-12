@@ -1,3 +1,4 @@
 name: dequis-t3
 main: com.tenjava.entries.dequis.t3.TenJava
 version: '${project.version}'
+load: startup
