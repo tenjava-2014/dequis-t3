@@ -7,6 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.generator.BlockPopulator;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.World;
 
 public class TenJava extends JavaPlugin {
@@ -22,6 +23,14 @@ public class TenJava extends JavaPlugin {
     class DerpChunkGenerator extends ChunkGenerator {
         public byte[] generate(World world, Random random, int cx, int cz) {
             byte[] result = new byte[32768];
+            for (int x = 0; x < 16; x++) {
+                for (int z = 0; z < 16; z++) {
+                    for (int y = 0; y < 10; y++) {
+                        result[(x * 16 + z) * 128 + y] = (byte)Material.STONE.getId();
+                    }
+
+                }
+            }
             return result;
         }
 
